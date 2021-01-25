@@ -3,17 +3,24 @@ import './App.css';
 import Person from './Person/Person';
 
 function App() {
+
     let state = {
         persons: [
             { name: 'Jason', age: 20},
-            { name: 'Test1', age: 22},
+            { name: 'Testing', age: 22},
             { name: 'Test2', age: 18}
         ]
     }
+
+    let switchNameHandler = () => {
+        console.log("Was Clicked")
+    }
+
   return (
     <div className={App}>
         <h1>Hi, I'm Jason Carrillo</h1>
         <p>I am a Software Developer</p>
+        <button onClick={switchNameHandler}>Switch Name</button>
         <Person name={state.persons[0].name} age={state.persons[0].age} />
         <Person name={state.persons[1].name} age={state.persons[1].age}>My Hobbies: Fishing</Person>
         <Person name={state.persons[2].age} age={state.persons[2].age} />
