@@ -1,37 +1,39 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Person from './Person/Person';
 
-function App() {
 
-    let state = {
-        persons: [
-            { name: 'Jason', age: 20},
+const app = props =>  {
+    const [ personsState, setPersonsState] = useState({
+                 persons: [
+                     { name: 'Jason', age: 20},
+                     { name: 'Testing', age: 22},
+                     { name: 'Test2', age: 18}
+            ],
+            otherState: 'Other State'
+        });
+
+    const  switchNameHandler = () => {
+    // console.log("Was Clicked")
+    // DONT DO THIS => state.persons[0].name = "Switched Jason";
+    this.setState ({persons: [
+            { name: 'SwitchedJason', age: 20},
             { name: 'Testing', age: 22},
-            { name: 'Test2', age: 18}
-        ],
-        otherState: 'Other State'
-    }
+            { name: 'SwitchedTest2', age: 18}
+        ]
+    })
+}
 
-    let switchNameHandler = () => {
-        // console.log("Was Clicked")
-        // DONT DO THIS => state.persons[0].name = "Switched Jason";
-        state = ({persons: [
-                { name: 'SwitchedJason', age: 20},
-                { name: 'Testing', age: 22},
-                { name: 'SwitchedTest2', age: 18}
-            ]
-        })
-    }
 
-  return (
+
+        return (
     <div className={App}>
         <h1>Hi, I'm Jason Carrillo</h1>
         <p>I am a Software Developer</p>
         <button onClick={switchNameHandler}>Switch Name</button>
-        <Person name={state.persons[0].name} age={state.persons[0].age} />
-        <Person name={state.persons[1].name} age={state.persons[1].age}>My Hobbies: Fishing</Person>
-        <Person name={state.persons[2].age} age={state.persons[2].age} />
+        <Person name={personsState.persons[0].name} age={personsState.persons[0].age} />
+        <Person name={personsState.persons[1].name} age={personsState.persons[1].age}>My Hobbies: Fishing</Person>
+        <Person name={personsState.persons[2].age} age={personsState.persons[2].age} />
     </div>
 
       // After nesting for a long time it becomes too much. Better to not use this way.
@@ -41,3 +43,23 @@ function App() {
 }
 
 export default App;
+
+// state = {
+//     persons: [
+//         { name: 'Jason', age: 20},
+//         { name: 'Testing', age: 22},
+//         { name: 'Test2', age: 18}
+//     ],
+//     otherState: 'Other State'
+// }
+//
+// switchNameHandler = () => {
+//     // console.log("Was Clicked")
+//     // DONT DO THIS => state.persons[0].name = "Switched Jason";
+//     this.setState ({persons: [
+//             { name: 'SwitchedJason', age: 20},
+//             { name: 'Testing', age: 22},
+//             { name: 'SwitchedTest2', age: 18}
+//         ]
+//     })
+// }
