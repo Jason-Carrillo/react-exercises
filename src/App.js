@@ -9,11 +9,19 @@ function App() {
             { name: 'Jason', age: 20},
             { name: 'Testing', age: 22},
             { name: 'Test2', age: 18}
-        ]
+        ],
+        otherState: 'Other State'
     }
 
     let switchNameHandler = () => {
-        console.log("Was Clicked")
+        // console.log("Was Clicked")
+        // DONT DO THIS => state.persons[0].name = "Switched Jason";
+        state = ({persons: [
+                { name: 'SwitchedJason', age: 20},
+                { name: 'Testing', age: 22},
+                { name: 'SwitchedTest2', age: 18}
+            ]
+        })
     }
 
   return (
