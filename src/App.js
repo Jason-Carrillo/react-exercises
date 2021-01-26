@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
+import React, { Components } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import {render} from "@testing-library/react";
 
 
-const app = props => {
-    const [personsState, setPersonsState] = useState({
+class App extends Components {
+    state = {
         persons: [
             {name: 'Jason', age: 20},
             {name: 'Testing', age: 22},
             {name: 'Test2', age: 18}
         ],
         otherState: 'Other State'
-    });
-    console.log(personsState)
+    };
 
-    const switchNameHandler = (newName) => {
+    switchNameHandler = (newName) => {
         // console.log("Was Clicked")
         // DONT DO THIS => state.persons[0].name = "Switched Jason";
         this.setPersonsState({
@@ -38,23 +36,31 @@ const app = props => {
     }
 
 
-    render()
+    render ()
     {
+
+        const style = {
+            backgroundColor: 'white',
+            font: 'inherit',
+            border: '1px solid blue',
+            padding: '8px',
+            cursor: 'pointer'
+        };
         return (
             <div className="App">
                 <h1>Hi, I'm Jason Carrillo</h1>
                 <p>I am a Software Developer</p>
-                <button onClick={() => this.switchNameHandler('Voorhees!!')}>Switch Name</button>
+                <button style={style} onClick={() => this.switchNameHandler('Voorhees!!')}>Switch Name</button>
                 <Person
-                    name={personsState.persons[0].name}
-                    age={personsState.persons[0].age}/>
+                    name={this.state.persons[0].name}
+                    age={this.state.persons[0].age}/>
                 <Person
-                    name={personsState.persons[1].name}
-                    age={personsState.persons[1].age} click={switchNameHandler.bind(this, "Voorhees")}
+                    name={this.state.persons[1].name}
+                    age={this.state.persons[1].age} click={this.switchNameHandler.bind(this, "Voorhees")}
                     changed={this.nameChangedHandler}>My Hobbies: Fishing</Person>
                 <Person
-                    name={personsState.persons[2].age}
-                    age={personsState.persons[2].age}/>
+                    name={this.state.persons[2].age}
+                    age={this.state.persons[2].age}/>
             </div>
 
             // After nesting for a long time it becomes too much. Better to not use this way.
@@ -64,7 +70,7 @@ const app = props => {
     }
 }
 
-export default app;
+export default App;
 
 // state = {
 //     persons: [
