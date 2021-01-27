@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+
+    state = {
+        lengthSize: 0
+    }
+
+    textLength = (event) => {
+        // console.log( {lengthSize: event.target.value.length} )
+      this.setState( {lengthSize: event.target.value.length} );
+    }
+
   render() {
     return (
       <div className="App">
@@ -14,8 +24,9 @@ class App extends Component {
           <li>When you click a CharComponent, it should be removed from the entered text.</li>
         </ol>
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
-          s
-          <input/>
+
+          <input onChange={this.textLength}/>
+          <p >{this.state.lengthSize}</p>
       </div>
     );
   }
