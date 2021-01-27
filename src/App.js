@@ -10,7 +10,7 @@ class App extends Component {
             {name: 'Testing', age: 22},
             {name: 'Test2', age: 18}
         ],
-        otherState: 'Other State',
+        otherState: 'Other value',
         showPersons: false
     };
 
@@ -51,27 +51,29 @@ class App extends Component {
             padding: '8px',
             cursor: 'pointer'
         };
+
+        let Persons = null;
+
+        if (this.state.showPersons){
+            Persons = (
+                <div>
+                    {
+                        this.state.persons.map(person => {
+                            return <Person name={person.name} age={person.age}/>
+                        })
+
+                    }
+                </div>
+            )
+        }
+
         return (
             <div className="App">
                 <h1>Hi, I'm Jason Carrillo</h1>
                 <p>I am a Software Developer</p>
                 <button style={style} onClick={this.togglePersonsHandler}>Switch Name</button>
-                {
-                    this.state.showPersons ?
-                    <div>
-                        <Person
-                            name={this.state.persons[0].name}
-                            age={this.state.persons[0].age}/>
-                        <Person
-                            name={this.state.persons[1].name}
-                            age={this.state.persons[1].age} click={this.switchNameHandler.bind(this, "Voorhees")}
-                            changed={this.nameChangedHandler}>My Hobbies: Fishing</Person>
-                        <Person
-                            name={this.state.persons[2].age}
-                            age={this.state.persons[2].age}/>
-                     </div>
-                        : null
-                }
+
+                {Persons}
             </div>
 
             // After nesting for a long time it becomes too much. Better to not use this way.
