@@ -93,6 +93,10 @@ class App extends Component {
                 <button style={style} onClick={this.togglePersonsHandler}>Switch Name</button>
 
                 {Persons}
+
+
+                <br />
+                <input/>
             </div>
 
             // After nesting for a long time it becomes too much. Better to not use this way.
