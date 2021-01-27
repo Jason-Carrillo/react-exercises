@@ -35,24 +35,18 @@ class App extends Component {
 
         const person = {
             ...this.state.persons[personIndex]
-        }
+        };
 
         person.name = event.target.value;
 
         // OTHER WAY OF DOING IT
         // const person = Object.assign({}, this.state.persons[personIndex])
 
-        // MODERN WAY OF DOING IT
-        const persons = {...this.state.persons[personIndex]}
+        // MODERN WAY OF DOING IT "Spread Operator"
+        const persons = [...this.state.persons]
         persons[personIndex] = person;
 
-        this.setState({
-            persons: [
-                {name: "Jason", age: 20},
-                {name: event.target.value, age: 25},
-                {name: "test3", age: 20}
-            ]
-        })
+        this.setState({persons: persons})
     }
 
     togglePersonsHandler = () => {
@@ -83,7 +77,7 @@ class App extends Component {
                                 name={person.name}
                                 age={person.age}
                                 key={person.id}
-                                changed={() => this.nameChangedHandler(event, person.id)}
+                                changed={(event) => this.nameChangedHandler(event, person.id)}
                             />
                         })
 
