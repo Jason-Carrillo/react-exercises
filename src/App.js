@@ -26,15 +26,6 @@ class App extends Component {
         })
     }
 
-    nameChangedHandler = (event) => {
-        this.setState({
-            persons: [
-                {name: "Jason", age: 20},
-                {name: event.target.value, age: 25},
-                {name: "test3", age: 20}
-            ]
-        })
-    }
 
     togglePersonsHandler = () => {
         const doesShow = this.state.showPersons;
@@ -59,7 +50,10 @@ class App extends Component {
                 <div>
                     {
                         this.state.persons.map(person => {
-                            return <Person name={person.name} age={person.age} changed={this.nameChangedHandler}/>
+                            return <Person
+                                name={person.name}
+                                age={person.age}
+                                changed={this.nameChangedHandler}/>
                         })
 
                     }
