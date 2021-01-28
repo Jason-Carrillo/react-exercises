@@ -5,6 +5,11 @@ class ValidationComponent extends Component {
         return (
             <div>
                 <p>{this.props.textLength}</p>
+                { this.props.textLength < 5 ?
+                    <p>Text too Short</p>
+                    :
+                    <p>Text Long Enough</p>
+                }
             </div>
         );
     }
