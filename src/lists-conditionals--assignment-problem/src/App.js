@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import ValidationComponent from "./ValidationComponent";
+import CharComponent from "./CharComponent"
 
 class App extends Component {
 
     state = {
-        lengthSize: 0
+        lengthSize: 0,
+        inputString: ""
     }
 
     textLength = (event) => {
-        // console.log( {lengthSize: event.target.value.length} )
-      this.setState( {lengthSize: event.target.value.length} );
+        this.setState({
+            lengthSize: event.target.value.length,
+            inputString: event.target.value}
+            );
     }
+
 
   render() {
     return (
@@ -29,6 +34,8 @@ class App extends Component {
           <input onChange={this.textLength}/>
           <p >{this.state.lengthSize}</p>
           <ValidationComponent textLength={this.state.lengthSize} />
+
+          <CharComponent letter={this.state.inputString} />
       </div>
     );
   }
