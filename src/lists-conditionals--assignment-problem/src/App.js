@@ -19,6 +19,17 @@ class App extends Component {
 
 
   render() {
+      let charString = (
+          <div>
+              {
+                  this.state.inputString.split('').map((char) => {
+                      return <CharComponent
+                          letter={char}
+                      />
+                  })
+              }
+          </div>
+      )
     return (
       <div className="App">
         <ol>
@@ -36,6 +47,8 @@ class App extends Component {
           <ValidationComponent textLength={this.state.lengthSize} />
 
           <CharComponent letter={this.state.inputString} />
+          {charString}
+
       </div>
     );
   }
