@@ -80,7 +80,6 @@ class App extends Component {
                                 changed={(event) => this.nameChangedHandler(event, person.id)}
                             />
                         })
-
                     }
                 </div>
             )
