@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 
@@ -57,20 +57,22 @@ class App extends Component {
 
     render () {
 
-        const style = {
-            backgroundColor: 'green',
-            color: 'white',
-            font: 'inherit',
-            border: '1px solid blue',
-            padding: '8px',
-            cursor: 'pointer',
-            ':hover': {
-                backgroundColor: 'lightgreen',
-                color: 'black'
-            }
-        };
+        // const style = {
+        //     backgroundColor: 'green',
+        //     color: 'white',
+        //     font: 'inherit',
+        //     border: '1px solid blue',
+        //     padding: '8px',
+        //     cursor: 'pointer',
+        //     ':hover': {
+        //         backgroundColor: 'lightgreen',
+        //         color: 'black'
+        //     }
+        // };
 
         let Persons = null;
+
+        let btnClass = [classes.Button];
 
         if (this.state.showPersons){
             Persons = (
@@ -88,26 +90,22 @@ class App extends Component {
                     }
                 </div>
             )
-            // style.backgroundColor = 'red';
-            // style[':hover'] = {
-            //     backgroundColor: 'salmon',
-            //     color: 'black'
-            // }
+            btnClass.push(classes.Red)
         }
 
-        let classes = []
+        let assignedClasses = []
         if (this.state.persons.length <= 2) {
-            classes.push('red'); //CLASSES WILL BE RED
+            assignedClasses.push(classes.red); //CLASSES WILL BE RED
         }
         if (this.state.persons.length <= 1){
-            classes.push('bold'); //CLASSES WILL BE BOLD
+            assignedClasses.push(classes.bold); //CLASSES WILL BE BOLD
         }
 
         return (
-            <div className="App">
+            <div className={classes.App}>
                 <h1>Hi, I'm Jason Carrillo</h1>
-                <p className={classes.join(' ')}>I am a Software Developer</p>
-                <button className="button" onClick={this.togglePersonsHandler}>Switch Name</button>
+                <p className={assignedClasses.join(' ')}>I am a Software Developer</p>
+                <button className={btnClass.join(" ")} onClick={this.togglePersonsHandler}>Switch Name</button>
 
                 {Persons}
 
