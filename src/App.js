@@ -87,10 +87,12 @@ class App extends Component {
             style.backgroundColor = 'red';
         }
 
+        let classes = ['red', 'bold'].join(' ')
+
         return (
             <div className="App">
                 <h1>Hi, I'm Jason Carrillo</h1>
-                <p>I am a Software Developer</p>
+                <p className={classes}>I am a Software Developer</p>
                 <button style={style} onClick={this.togglePersonsHandler}>Switch Name</button>
 
                 {Persons}
