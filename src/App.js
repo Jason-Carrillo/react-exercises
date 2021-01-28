@@ -87,7 +87,13 @@ class App extends Component {
             style.backgroundColor = 'red';
         }
 
-        let classes = ['red', 'bold'].join(' ')
+        let classes = []
+        if (this.state.persons.length <= 2) {
+            classes.push('red'); //CLASSES WILL BE RED
+        }
+        if (this.state.persons.length <= 1){
+            classes.push('bold'); //CLASSES WILL BE BOLD
+        }
 
         return (
             <div className="App">
