@@ -4,18 +4,18 @@ import Person from './Person/Person';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-background-color: green;
-color: white;
-font: inherit;
-border: 1px solid blue;
-padding: 8px;
-cursor: pointer;
-
-&:hover {
-    background-color: lightgreen;
-    color: black;
-}
-`;
+    background-color: ${props => props.altColor ? 'red' : 'green'};
+    color: white;
+    font: inherit;
+    border: 1px solid blue;
+    padding: 8px;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: ${props => props.altColor ? 'salmon' : 'lightgreen'};
+        color: black;
+    }
+    `;
 
 class App extends Component {
     state = {
@@ -102,11 +102,11 @@ class App extends Component {
                     }
                 </div>
             )
-            style.backgroundColor = 'red';
-            style[':hover'] = {
-                backgroundColor: 'salmon',
-                color: 'black'
-            }
+            // style.backgroundColor = 'red';
+            // style[':hover'] = {
+            //     backgroundColor: 'salmon',
+            //     color: 'black'
+            // }
         }
 
         let classes = []
@@ -121,7 +121,7 @@ class App extends Component {
             <div className="App">
                 <h1>Hi, I'm Jason Carrillo</h1>
                 <p className={classes.join(' ')}>I am a Software Developer</p>
-                <StyledButton onClick={this.togglePersonsHandler}>Switch Name</StyledButton>
+                <StyledButton altColor={this.state.showPersons} onClick={this.togglePersonsHandler}>Switch Name</StyledButton>
 
                 {Persons}
 
