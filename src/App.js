@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import Radium, {StyleRoot} from 'radium';
+import styled from 'styled-components';
 
+const StyledButton = styled.button`
+background-color: green;
+color: white;
+font: inherit;
+border: 1px solid blue;
+padding: 8px;
+cursor: pointer;
+
+&:hover {
+    background-color: lightgreen;
+    color: black;
+}
+`;
 
 class App extends Component {
     state = {
@@ -105,11 +118,10 @@ class App extends Component {
         }
 
         return (
-            <StyleRoot>
             <div className="App">
                 <h1>Hi, I'm Jason Carrillo</h1>
                 <p className={classes.join(' ')}>I am a Software Developer</p>
-                <button style={style} onClick={this.togglePersonsHandler}>Switch Name</button>
+                <StyledButton onClick={this.togglePersonsHandler}>Switch Name</StyledButton>
 
                 {Persons}
 
@@ -117,7 +129,6 @@ class App extends Component {
                 <br />
                 <input/>
             </div>
-            </StyleRoot>
             // After nesting for a long time it becomes too much. Better to not use this way.
             //   React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'testing'))
 
@@ -125,4 +136,4 @@ class App extends Component {
     }
 }
 
-export default Radium(App);
+export default App;
