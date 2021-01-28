@@ -17,13 +17,30 @@ class App extends Component {
             );
     }
 
+    deleteCharHandler = (charIndex) => {
+        //BOTH OF THESE WAYS WORK
+
+        // FIRST WAY USING SLICE
+        // const persons = this.state.persons.slice();
+
+        // SECOND WAY USING ... MORE MODERN
+        const charString = [...this.state.inputString];
+        console.log(charString)
+
+        charString.splice(charIndex, 1);
+
+        console.log(charString.join(""))
+        this.setState({inputString: charString.join("")})
+    }
+
 
   render() {
       let charString = (
           <div>
               {
-                  this.state.inputString.split('').map((char) => {
+                  this.state.inputString.split('').map((char, index) => {
                       return <CharComponent
+                          click={() => this.deleteCharHandler(index)}
                           letter={char}
                       />
                   })
