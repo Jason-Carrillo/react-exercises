@@ -29,7 +29,6 @@ class App extends Component {
 
         charString.splice(charIndex, 1);
 
-        console.log(charString.join(""))
         this.setState({inputString: charString.join("")})
     }
 
