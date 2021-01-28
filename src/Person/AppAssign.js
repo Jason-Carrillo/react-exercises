@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import UserInput from './UserInput';
 import UserOutput from './UserOutput';
 
-import './App.css';
-
 class App extends Component {
     render() {
         return (
