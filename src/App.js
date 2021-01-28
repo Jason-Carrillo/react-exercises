@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import Radium from 'radium';
+import Radium, {StyleRoot} from 'radium';
 
 
 class App extends Component {
@@ -105,6 +105,7 @@ class App extends Component {
         }
 
         return (
+            <StyleRoot>
             <div className="App">
                 <h1>Hi, I'm Jason Carrillo</h1>
                 <p className={classes.join(' ')}>I am a Software Developer</p>
@@ -116,7 +117,7 @@ class App extends Component {
                 <br />
                 <input/>
             </div>
-
+            </StyleRoot>
             // After nesting for a long time it becomes too much. Better to not use this way.
             //   React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'testing'))
 
