@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
-import Person from '../Components/Persons/Person/Person';
-import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import Persons from '../Components/Persons/Persons'
 
 
@@ -66,13 +64,11 @@ class App extends Component {
         if (this.state.showPersons){
             Persons = (
                 <div>
-
-
-                    <Person
+                    <Persons
                         persons={this.state.persons}
                         clicked={this.deletePersonHandler}
-                        changed={this.nameChangedHandler} />
-
+                        changed={this.nameChangedHandler}
+                    />
                 </div>
             )
             btnClass = classes.Red;
