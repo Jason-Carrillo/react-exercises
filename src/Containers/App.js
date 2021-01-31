@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
 import Persons from '../Components/Persons/Persons'
+import Cockpit from '../Components/Cockpit/Cockpit'
 
 
 class App extends Component {
@@ -77,9 +78,10 @@ class App extends Component {
 
         return (
             <div className={classes.App}>
-                <h1>Hi, I'm Jason Carrillo</h1>
-                <p className={assignedClasses.join(' ')}>I am a Software Developer</p>
-                <button className={btnClass} onClick={this.togglePersonsHandler}>Switch Name</button>
+                <Cockpit
+                showPersons={this.state.showPersons}
+                persons={this.state.persons}
+                />
 
                 {persons}
 
