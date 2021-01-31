@@ -74,13 +74,7 @@ class App extends Component {
             btnClass = classes.Red;
         }
 
-        let assignedClasses = []
-        if (this.state.persons.length <= 2) {
-            assignedClasses.push(classes.red); //CLASSES WILL BE RED
-        }
-        if (this.state.persons.length <= 1){
-            assignedClasses.push(classes.bold); //CLASSES WILL BE BOLD
-        }
+
 
         return (
             <div className={classes.App}>
