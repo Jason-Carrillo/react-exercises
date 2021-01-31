@@ -62,7 +62,7 @@ class App extends Component {
         let btnClass = "";
 
         if (this.state.showPersons){
-            Persons = (
+            persons = (
                 <div>
                     <Persons
                         persons={this.state.persons}
@@ -88,7 +88,7 @@ class App extends Component {
                 <p className={assignedClasses.join(' ')}>I am a Software Developer</p>
                 <button className={btnClass} onClick={this.togglePersonsHandler}>Switch Name</button>
 
-                {Persons}
+                {persons}
 
 
                 <br />
