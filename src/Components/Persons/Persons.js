@@ -11,3 +11,5 @@ const persons = (props) => props.persons.map((person, index) => {
             changed={(event) => props.nameChangedHandler(event, person.id)} />
 
     })
+
+export default persons;
