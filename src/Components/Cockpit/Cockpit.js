@@ -2,7 +2,12 @@ import React from 'react';
 import classes from "./Cockpit.module.css";
 
 const cockpit = (props) => {
+
     let assignedClasses = []
+    let btnClass = "";
+
+    btnClass = classes.Red;
+
     if (props.persons.length <= 2) {
         assignedClasses.push(classes.red); //CLASSES WILL BE RED
     }
@@ -11,7 +16,7 @@ const cockpit = (props) => {
     }
 
     return (
-        <div>
+        <div className={classes.Cockpit} >
             <h1>Hi, I'm Jason Carrillo</h1>
             <p className={assignedClasses.join(' ')}>I am a Software Developer</p>
             <button className={btnClass} onClick={this.togglePersonsHandler}>Switch Name</button>
