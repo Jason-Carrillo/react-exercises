@@ -57,7 +57,7 @@ class App extends Component {
 
     render () {
 
-        let Persons = null;
+        let persons = null;
 
         let btnClass = "";
 
