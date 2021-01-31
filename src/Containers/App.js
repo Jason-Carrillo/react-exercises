@@ -66,21 +66,13 @@ class App extends Component {
         if (this.state.showPersons){
             Persons = (
                 <div>
-                    {
-                        this.state.persons.map((person, index) => {
-                            return <ErrorBoundary key={person.id}>
-                                <Person persons={this.state.persons}
-                                        clicked={this.deletePersonHandler}
-                                        changed={this.nameChangedHandler}
-                                click={() => this.deletePersonHandler(index)}
-                                name={person.name}
-                                age={person.age}
 
-                                changed={(event) => this.nameChangedHandler(event, person.id)}
-                            />
-                            </ErrorBoundary>
-                        })
-                    }
+
+                    <Person
+                        persons={this.state.persons}
+                        clicked={this.deletePersonHandler}
+                        changed={this.nameChangedHandler} />
+
                 </div>
             )
             btnClass = classes.Red;
