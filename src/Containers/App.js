@@ -8,17 +8,19 @@ class App extends Component {
     constructor(props) {
         super(props);
         console.log('[App.js constructor')
-        this.state = {
-            persons: [
-                { id: 'ascs', name: 'Jason', age: 20},
-                { id: 'bcsa', name: 'Testing', age: 22},
-                { id: 'cdsf', name: 'Test2', age: 18}
-            ],
-            otherState: 'Other value',
-            showPersons: false
-        };
+        this.state =
     }
 
+
+    state = {
+        persons: [
+            { id: 'ascs', name: 'Jason', age: 20},
+            { id: 'bcsa', name: 'Testing', age: 22},
+            { id: 'cdsf', name: 'Test2', age: 18}
+        ],
+        otherState: 'Other value',
+        showPersons: false
+    };
 
     deletePersonHandler = (personIndex) => {
         //BOTH OF THESE WAYS WORK
