@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from "./Cockpit.module.css";
 
-const cockpit = (props) => {
+const Cockpit = (props) => {
 
     let assignedClasses = []
     let btnClass = "";
@@ -19,9 +19,11 @@ const cockpit = (props) => {
 
     return (
         <div className={classes.Cockpit} >
-            <h1>Hi, I'm Jason Carrillo</h1>
-            <p className={assignedClasses.join(' ')}>I am a Software Developer</p>
+            <h1>{props.title}</h1>
+            <p className={assignedClasses.join(' ')}>This is Workign!</p>
             <button className={btnClass} onClick={props.clicked}>Switch Name</button>
         </div>
     );
 }
+
+export default Cockpit;
