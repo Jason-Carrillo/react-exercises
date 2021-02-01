@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import Person from "./Person/Person";
 
 class Persons extends Component {
-    static getDerivedStateFromProps(props, state){
-        console.log('[Perons.js] getDerivedStateFromProps')
-    }
+    // static getDerivedStateFromProps(props, state){
+    //     console.log('[Perons.js] getDerivedStateFromProps')
+    // }
 
     shouldComponentUpdate(nextProps, nextState) {
         console.log('[Persons.js] shouldComponentUpdate')
@@ -13,6 +13,7 @@ class Persons extends Component {
 
     getSnapshotBeforeUpdate(prevProps, prevState) {
         console.log('[Persons.js] getSnapshotBeforeUpdate')
+        return null;
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -32,5 +33,6 @@ class Persons extends Component {
 
         })
     }
-};
+}
+
 export default Persons;
