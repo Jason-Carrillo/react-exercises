@@ -103,7 +103,6 @@ class App extends Component {
 
 
                 <br />
-                <input/>
             </div>
             // After nesting for a long time it becomes too much. Better to not use this way.
             //   React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'testing'))
