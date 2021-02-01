@@ -26,6 +26,11 @@ class App extends Component {
         return state;
     }
 
+    //WILL BE REMOVED WONT BE AROUND FOR LONG
+    componentWillMount() {
+        console.log('[App.js] componentWillMount')
+    }
+
     componentDidMount() {
         console.log('[App.js] componentDidMount')
     }
