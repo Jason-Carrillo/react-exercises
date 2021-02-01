@@ -26,6 +26,10 @@ class App extends Component {
         return state;
     }
 
+    componentDidMount() {
+        console.log('[App.js] componentDidMount')
+    }
+
     deletePersonHandler = (personIndex) => {
         //BOTH OF THESE WAYS WORK
 
@@ -68,7 +72,7 @@ class App extends Component {
 
 
     render () {
-        console.log('App.js] render')
+        console.log('[App.js] render')
 
         let persons = null;
 
