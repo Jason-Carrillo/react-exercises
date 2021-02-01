@@ -31,15 +31,18 @@ class App extends Component {
     //     console.log('[App.js] componentWillMount')
     // }
 
+    //IMPORTANT
     componentDidMount() {
         console.log('[App.js] componentDidMount')
     }
 
+    //IMPORTANT
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         console.log('[App.js] shouldComponentUpdate')
         return true;
     }
 
+    //IMPORTANT
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log('[App.js] componentDidUpdate')
     }
