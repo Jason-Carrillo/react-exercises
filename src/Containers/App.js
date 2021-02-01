@@ -22,6 +22,11 @@ class App extends Component {
         showPersons: false
     };
 
+    static getDerivedStateFromProps (props, state) {
+        console.log('[App.js] getDerivedStateFromPops', props)
+        return state;
+    }
+
     deletePersonHandler = (personIndex) => {
         //BOTH OF THESE WAYS WORK
 
