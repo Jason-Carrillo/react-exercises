@@ -10,8 +10,8 @@ class Person extends Component {
         return (
 
             <div className={classes.Person}>
-                <p onClick={props.click}>I'm a {props.name}, and I am {props.age} years old</p>
-                <p>{props.children}</p>
+                <p onClick={this.props.click}>I'm a {this.props.name}, and I am {this.props.age} years old</p>
+                <p>{this.props.children}</p>
                 <input type="text" onChange={props.changed}/>
             </div>
         )
