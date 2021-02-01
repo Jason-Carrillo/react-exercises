@@ -6,6 +6,16 @@ class Persons extends Component {
     //     console.log('[Perons.js] getDerivedStateFromProps')
     // }
 
+    //OUT DATED NO LONGER USED
+    // componentWillReceiveProps(nextProps, nextContext) {
+    //     console.log('[Persons.js] componentWIllReceiveProps', props)
+    // }
+
+    //OUT DATED NO LONGER USED
+    // componentWillUpdate(nextProps, nextState, nextContext) {
+    //     console.log('[Persons.js] componentWIllReceiveProps', props)
+    // }
+
     shouldComponentUpdate(nextProps, nextState) {
         console.log('[Persons.js] shouldComponentUpdate')
         return true;
