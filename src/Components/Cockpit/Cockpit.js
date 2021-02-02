@@ -21,7 +21,7 @@ const Cockpit = (props) => {
         console.log('[Cockpit.js] 2nd useEffect')
 
         return () => {
-            console.log('[Cockpit.js] cleamup work in 2nd useEffect')
+            console.log('[Cockpit.js] cleanup work in 2nd useEffect')
         }
     })
 
