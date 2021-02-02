@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import classes from './App.module.css';
 import Persons from '../Components/Persons/Persons'
 import Cockpit from '../Components/Cockpit/Cockpit'
-import WithClass from "../hoc/WithClass";
+import withClass from "../hoc/withClass";
+import Aux from "../hoc/Aux"
 
 
 class App extends Component {
@@ -110,7 +111,7 @@ class App extends Component {
 
 
         return (
-            <WithClass classes={classes.App}>
+            <Aux>
                 <button onClick={() => {
                     this.setState( {showCockpit: false} )
                 }}>
@@ -121,15 +122,13 @@ class App extends Component {
                     showPersons={this.state.showPersons}
                     personsLength={this.state.persons.length}
                     clicked={this.togglePersonsHandler}
-                />
-                    ): null}
-
+                /> ): null}
 
                 {persons}
 
 
                 <br />
-            </WithClass>
+            </Aux>
             // After nesting for a long time it becomes too much. Better to not use this way.
             //   React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'testing'))
 
@@ -137,4 +136,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default withClass(App, classes.App);
