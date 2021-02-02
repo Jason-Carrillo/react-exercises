@@ -17,6 +17,14 @@ const Cockpit = (props) => {
     // you can have MULTIPLE USE EFFECT
     //useEffect()
 
+    useEffect(() => {
+        console.log('[Cockpit.js] 2nd useEffect')
+
+        return () => {
+            console.log('[Cockpit.js] cleamup work in 2nd useEffect')
+        }
+    })
+
     let assignedClasses = []
     let btnClass = "";
 
