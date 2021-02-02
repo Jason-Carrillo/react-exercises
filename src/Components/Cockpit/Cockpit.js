@@ -18,7 +18,7 @@ const Cockpit = (props) => {
         //     ,1000)
         toggleButtonRef.current.click();
         return () => {
-            console.log('[Cockpit.js] clearn up work in useEffect')
+            console.log('[Cockpit.js] clean up work in useEffect')
         }
     }, [])
 
