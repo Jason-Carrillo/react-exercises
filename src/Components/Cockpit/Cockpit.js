@@ -9,7 +9,13 @@ const Cockpit = (props) => {
         setTimeout(() =>
             alert('saved Data to Cloud')
             ,1000)
+        return () => {
+            console.log('[Cockpit.js] clearn up work in useEffect')
+        }
     }, [])
+
+    // you can have MULTIPLE USE EFFECT
+    //useEffect()
 
     let assignedClasses = []
     let btnClass = "";
