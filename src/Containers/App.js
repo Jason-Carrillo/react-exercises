@@ -134,7 +134,8 @@ class App extends Component {
 
                 <AuthContext.Provider value={{
                     authenticated: this.state.authenticated,
-                    login: this.loginHandler}}
+                    login: this.loginHandler
+                }}
                 >
                 {this.state.showCockpit ? (
                     <Cockpit

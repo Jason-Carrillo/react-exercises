@@ -15,7 +15,7 @@ class Person extends Component {
     }
 
     // DO IT THIS WAY EASIER AND SIMPLER ONLY IN CLASS COMPONENTS
-    static ContextType = AuthContext;
+    static contextType = AuthContext;
 
     componentDidMount() {
         // this.inputElement.focus();
@@ -28,8 +28,7 @@ class Person extends Component {
         return (
         <Aux>
 
-                {this.context.authenticated ? <p> Authenticated </p> : <p> Please log in</p>}
-
+            {this.context.authenticated ? <p> Authenticated </p> : <p> Please log in</p>}
 
             <p key="i1" onClick={this.props.click}>I'm a {this.props.name}, and I am {this.props.age} years old
             </p>

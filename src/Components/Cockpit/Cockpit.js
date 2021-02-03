@@ -55,7 +55,7 @@ const Cockpit = (props) => {
                 Switch Name
             </button>
 
-                <button onClick={authContext.login}>Log In</button>
+            <button onClick={authContext.login}>Log In</button>
 
         </div>
     );
